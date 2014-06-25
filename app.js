@@ -15,6 +15,11 @@ server = http.createServer(function (request, response){
       response.write(contents);
       response.end();
     });
+  }else if(request.url === '/images/download.jpg'){
+    fs.readFile('./images/download.jpg', function(errors, contents){
+     response.write(contents);
+     response.end();
+    })
   } else {
     response.end('File not found!!!');
   }
